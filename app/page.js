@@ -11,7 +11,7 @@ export default function Home() {
             TES DISC
           </h1>
           <p className="py-3 font-semibold text-center lg:text-xl">
-            Aplikasi akan menampilkan serangkaian pertanyaan, masing-masing
+            Aplikasi akan menampilkan serangkaian pernyataan, masing-masing
             dengan empat pilihan jawaban. Baca setiap pertanyaan dengan cermat
             dan pilih satu nilai yang paling sesuai dengan diri Anda untuk
             setiap pilihan jawaban.

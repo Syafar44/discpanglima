@@ -235,44 +235,37 @@ const DISC = () => {
     <>
       <Navbar />
       <div className="flex justify-center p-5 lg:mt-12">
-        <div className="text-wrap p-5 lg:px-52">
-          <h1 className="font-bold text-center text-xl">
-            Beri pilihan pada setiap nomor di bawah ini sesuai dengan
-            kepribadian anda.
+        <div className="text-wrap px-5 lg:px-52 2xl:px-96">
+          <h1 className="font-bold text-xl text-center">
+            Aplikasi DISC ini akan menampilkan kolom yang berisi empat
+            pernyataan. Anda diminta untuk memilih setiap pernyataan dengan
+            memberikan angka dari 4 hingga 1, dengan penjelasan sebagai berikut:
           </h1>
-          <p className="text-center mb-4">
-            SB (Sangat Benar), B(Benar), TB(Tidak Benar), STB(Sangat Tidak
-            Benar)
-          </p>
-          <h1 className="font-bold text-center text-xl">
-            Apa Itu SB, B, TB, STB?
-          </h1>
-
-          <ul className="list-disc font-semibold">
-            <li>
-              SB (Sangat Benar): Pernyataan sangat mencerminkan diri Anda.
-            </li>
-            <li>B (Benar): Pernyataan benar mencerminkan diri Anda.</li>
-            <li>TB (Tidak Benar): Pernyataan tidak mencerminkan diri Anda.</li>
-            <li>
-              STB (Sangat Tidak Benar): Pernyataan sangat tidak mencerminkan
-              diri Anda.
-            </li>
+          <ul className="list-disc font-semibold py-3">
+            <li>Angka 4: Sangat sesuai dengan karakter diri Anda</li>
+            <li>Angka 3: Sesuai dengan karakter diri Anda</li>
+            <li>Angka 2: Tidak sesuai dengan karakter diri Anda</li>
+            <li>Angka 1: Sangat tidak sesuai dengan karakter diri Anda</li>
           </ul>
+          <p>
+          Setiap pernyataan pada masing-masing kolom harus diisi dengan salah
+          satu dari pilihan angka di atas.
+        </p>
         </div>
+        
       </div>
       <div className="flex justify-center p-4">
         <form
           onSubmit={handleSubmit}
-          className="grid grid-cols-1 lg:grid-cols-2"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-5"
         >
           {questions.map((q, index) => (
             <div
               key={index}
               ref={(el) => (questionRefs.current[index] = el)}
-              className={` p-5${unansweredIndex === index ? "bg-red-300" : ""}`}
+              className={`${unansweredIndex === index ? "bg-red-400 rounded-xl" : ""}`}
             >
-              <div className="flex gap-4 border-4 p-4 border-black rounded-xl">
+              <div className="flex gap-2 border-4 p-4 border-black rounded-xl">
                 <p className="font-bold">{q.question}.</p>
                 <div className="w-full">
                   {q.options.map((option, optionIndex) => (
@@ -293,25 +286,25 @@ const DISC = () => {
                           value="4"
                           disabled={responses[index].includes(4)}
                         >
-                          SB
+                          4
                         </option>
                         <option
                           value="3"
                           disabled={responses[index].includes(3)}
                         >
-                          B
+                          3
                         </option>
                         <option
                           value="2"
                           disabled={responses[index].includes(2)}
                         >
-                          TB
+                          2
                         </option>
                         <option
                           value="1"
                           disabled={responses[index].includes(1)}
                         >
-                          STB
+                          1
                         </option>
                       </select>
                     </label>
