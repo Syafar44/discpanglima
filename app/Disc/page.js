@@ -238,7 +238,7 @@ const DISC = () => {
         <div className="text-wrap p-5 lg:px-52">
           <h1 className="font-bold text-center text-xl">
             Beri pilihan pada setiap nomor di bawah ini sesuai dengan
-            keperibadian anda.
+            kepribadian anda.
           </h1>
           <p className="text-center mb-4">
             SB (Sangat Benar), B(Benar), TB(Tidak Benar), STB(Sangat Tidak
