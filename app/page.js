@@ -17,11 +17,6 @@ export default function Home() {
             dan pilih satu nilai yang paling sesuai dengan diri Anda untuk
             setiap pilihan jawaban.
           </p>
-          <p className="py-3 font-semibold text-center lg:text-xl">
-            Hasil tes akan ditampilkan dalam sebuah modal yang muncul di layar.
-            Anda dapat melihat skor Anda dalam setiap kategori kepribadian:
-            Dominance, Influence, Submission, dan Compliance.
-          </p>
           <div className="flex justify-center mb-2 2xl:mb-7">
             <Link href="/Disc">
               <button className="btn bg-red-700 text-white">Mulai Tes</button>
