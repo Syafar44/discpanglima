@@ -234,11 +234,11 @@ const DISC = () => {
   return (
     <>
       <Navbar />
-      <div className="flex justify-center p-5">
+      <div className="flex justify-center p-5 lg:mt-12">
         <div className="text-wrap p-5 lg:px-52">
           <h1 className="font-bold text-center text-xl">
-            Beri nilai untuk setiap pilihan sesuai dengan tingkat kebenarannya
-            bagi Anda
+            Beri pilihan pada setiap nomor di bawah ini sesuai dengan
+            keperibadian anda.
           </h1>
           <p className="text-center mb-4">
             SB (Sangat Benar), B(Benar), TB(Tidak Benar), STB(Sangat Tidak
@@ -321,7 +321,7 @@ const DISC = () => {
             </div>
           ))}
           <div className="lg:col-span-2 justify-end flex px-4">
-            <button type="submit" className="btn bg-red-700 text-white">
+            <button type="submit" className="btn bg-yellow-500">
               Submit
             </button>
           </div>
@@ -336,7 +336,9 @@ const DISC = () => {
               {results && (
                 <div className="lg:stats shadow w-full">
                   <div className="stat text-red-700 border-b">
-                    <div className="stat-title font-semibold text-red-600">Dominance</div>
+                    <div className="stat-title font-semibold text-red-600">
+                      Dominance
+                    </div>
                     <div className="stat-value">{results.dominance}</div>
                   </div>
                   <div className="stat text-yellow-500 border-b">
