@@ -1,7 +1,9 @@
 "use client";
 import { useRef, useState } from "react";
+import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { useRouter } from "next/navigation";
 
 const questions = [
   {
@@ -22,153 +24,6 @@ const questions = [
       "Suka kedamaian",
     ],
   },
-  {
-    question: "3",
-    options: [
-      "Pandai bergaul",
-      "Berkemauan kuat",
-      "Suka berkorban",
-      "Suka mengalah",
-    ],
-  },
-  {
-    question: "4",
-    options: [
-      "Suka meyakinkan",
-      "Suka bersaing",
-      "Penuh pertimbangan",
-      "Senang dibimbing",
-    ],
-  },
-  {
-    question: "5",
-    options: [
-      "Periang",
-      "Dihormati/disegani",
-      "Senang menangani problem",
-      "Cenderung menahan diri",
-    ],
-  },
-  {
-    question: "6",
-    options: ["Bersemangat", "Percaya diri", "Peka/perasa", "Cepat puas"],
-  },
-  {
-    question: "7",
-    options: [
-      "Suka memuji/menyanjung",
-      "Berpikir positif",
-      "Perencana",
-      "Sabar",
-    ],
-  },
-  {
-    question: "8",
-    options: ["Spontan", "Praktis", "Ketat pada waktu", "Pemalu"],
-  },
-  {
-    question: "9",
-    options: [
-      "Optimis",
-      "Suka bicara, terus terang",
-      "Rapi/teratur",
-      "Sopan/hormat",
-    ],
-  },
-  {
-    question: "10",
-    options: ["Suka senda gurau", "Tegar/kuat hati", "Jujur", "Ramah tamah"],
-  },
-  {
-    question: "11",
-    options: [
-      "Menyukai kenikmatan",
-      "Berani/tidak penakut",
-      "Rinci/terperinci",
-      "Diplomatis/berhati-hati",
-    ],
-  },
-  {
-    question: "12",
-    options: [
-      "Penggembira",
-      "Percaya diri",
-      "Berbudaya/terpelajar",
-      "Konsisten/tidak mudah berubah",
-    ],
-  },
-  {
-    question: "13",
-    options: [
-      "Suka memberi ilham/inspirasi",
-      "Mandiri",
-      "Idealis",
-      "Tidak suka menentang",
-    ],
-  },
-  {
-    question: "14",
-    options: [
-      "Lincah/suka membuka diri",
-      "Mampu memutuskan",
-      "Tekun/ulet",
-      "Sedikit humor",
-    ],
-  },
-  {
-    question: "15",
-    options: [
-      "Mudah berbaur/bergaul",
-      "Cepat bertindak",
-      "Gemar musik, lembut",
-      "Perantara/penengah",
-    ],
-  },
-  {
-    question: "16",
-    options: [
-      "Senang bicara",
-      "Suka ngotot kuat bertahan",
-      "Senang berfikir",
-      "Bersikap toleran",
-    ],
-  },
-  {
-    question: "17",
-    options: [
-      "Lincah bersemangat",
-      "Senang membimbing",
-      "Pendengar yang baik",
-      "Setia/tidak gampang berubah",
-    ],
-  },
-  {
-    question: "18",
-    options: [
-      "Lucu/humor",
-      "Suka memimpin",
-      "Berfikir matematis",
-      "Mudah menerima saran",
-    ],
-  },
-  {
-    question: "19",
-    options: [
-      "Terkenal luas/populer",
-      "Produktif/menghasilkan",
-      "Perfeksionis",
-      "Suka mengijinkan /memperbolehkan",
-    ],
-  },
-  {
-    question: "20",
-    options: [
-      "Bersemangat gembira",
-      "Berani/tidak gampang takut",
-      "Berkelakuan tenang/kalem",
-      "Berpendirian tetap",
-    ],
-  },
 ];
 
 const DISC = () => {
@@ -176,15 +31,14 @@ const DISC = () => {
     Array(questions.length).fill([0, 0, 0, 0])
   );
   const [results, setResults] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [unansweredIndex, setUnansweredIndex] = useState(null);
   const questionRefs = useRef([]);
+  const router = useRouter();
 
   const handleInputChange = (index, optionIndex, value) => {
     const newResponses = [...responses];
     const currentValue = newResponses[index][optionIndex];
 
-    // Hapus nilai yang dipilih sebelumnya
     newResponses[index] = newResponses[index].map((val, i) =>
       val === parseInt(value) ? 0 : val
     );
@@ -221,14 +75,13 @@ const DISC = () => {
     }
 
     const results = calculateResults();
-    setResults(results);
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-    setResponses(Array(questions.length).fill([0, 0, 0, 0]));
-    setUnansweredIndex(null);
+    const sortedResults = Object.entries(results).sort((a, b) => b[1] - a[1]);
+    const topTwo = sortedResults.slice(0, 2);
+    router.push(
+      `/detail?topTwo=${encodeURIComponent(
+        JSON.stringify(topTwo)
+      )}&allResults=${encodeURIComponent(JSON.stringify(results))}`
+    );
   };
 
   return (
@@ -248,11 +101,10 @@ const DISC = () => {
             <li>Angka 1: Sangat tidak sesuai dengan karakter diri Anda</li>
           </ul>
           <p>
-          Setiap pernyataan pada masing-masing kolom harus diisi dengan salah
-          satu dari pilihan angka di atas.
-        </p>
+            Setiap pernyataan pada masing-masing kolom harus diisi dengan salah
+            satu dari pilihan angka di atas.
+          </p>
         </div>
-        
       </div>
       <div className="flex justify-center p-4">
         <form
@@ -263,7 +115,9 @@ const DISC = () => {
             <div
               key={index}
               ref={(el) => (questionRefs.current[index] = el)}
-              className={`${unansweredIndex === index ? "bg-red-400 rounded-xl" : ""}`}
+              className={`${
+                unansweredIndex === index ? "bg-red-400 rounded-xl" : ""
+              }`}
             >
               <div className="flex gap-2 border-4 p-4 border-black rounded-xl">
                 <p className="font-bold">{q.question}.</p>
@@ -319,47 +173,9 @@ const DISC = () => {
             </button>
           </div>
         </form>
-
-        {isModalOpen && (
-          <div className="modal modal-open">
-            <div className="modal-box lg:w-2/3 lg:max-w-2xl">
-              <h3 className="font-bold text-lg text-center">
-                Hasil Tes DISC Panglima Roqiiqu Group
-              </h3>
-              {results && (
-                <div className="lg:stats shadow w-full">
-                  <div className="stat text-red-700 border-b">
-                    <div className="stat-title font-semibold text-red-600">
-                      Dominance
-                    </div>
-                    <div className="stat-value">{results.dominance}</div>
-                  </div>
-                  <div className="stat text-yellow-500 border-b">
-                    <div className="stat-title text-yellow-400">Influence</div>
-                    <div className="stat-value">{results.influence}</div>
-                  </div>
-                  <div className="stat text-blue-700 border-b">
-                    <div className="stat-title text-blue-800">Steadiness</div>
-                    <div className="stat-value">{results.steadiness}</div>
-                  </div>
-                  <div className="stat text-green-700 border-b">
-                    <div className="stat-title text-green-800">Compliance</div>
-                    <div className="stat-value">{results.compliance}</div>
-                  </div>
-                </div>
-              )}
-              <div className="modal-action">
-                <button onClick={handleCloseModal} className="btn">
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
       <Footer />
     </>
   );
 };
-
 export default DISC;
