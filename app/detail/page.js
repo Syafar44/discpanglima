@@ -103,91 +103,106 @@ const DetailPageContent = () => {
   }
 
   return (
-    <div ref={pageRef} className="bg-white">
-      <Navbar />
-      <div className="lg:px-10 pt-5 px-5 2xl:px-80">
-        <div className="lg:flex justify-between">
-          <div>
+    <>
+      <div ref={pageRef} className="bg-white">
+        <Navbar />
+        <div className="lg:flex justify-between fixed -mt-2 lg:-right-10 lg:left-10 2xl:px-72 h-36 lg:h-32">
+          <div className="hero-overlay blur-sm bg-white opacity-90 absolute -z-50"></div>
+          <div className="pt-5 text-center lg:text-start -translate-x-16 lg:translate-x-0">
             <h1 className="font-bold lg:text-2xl">Detail Hasil Tes DISC</h1>
             <h1 className="font-extrabold text-xl lg:text-3xl pb-16 lg:pb-4 ">
               Panglima Roqiiqu Group
             </h1>
           </div>
-          <div className="stats scale-[0.5] lg:scale-[0.6] 2xl:scale-75 fixed top-32 right-4 lg:top-24 lg:-right-10 2xl:right-72 shadow lg:mb-2">
+          <div className="stats scale-[0.5] lg:scale-[0.6] -translate-x-16 -translate-y-20 lg:translate-x-0 lg:translate-y-0 2xl:scale-75 shadow lg:mb-2">
             <div className="stat text-red-700 border-b">
               <div className="stat-title font-semibold text-red-600">
                 Dominance
               </div>
-              <div className="stat-value">{results.dominance}</div>
+              <div className="flex justify-center">
+                <div className="stat-value">{results.dominance}</div>
+              </div>
             </div>
             <div className="stat text-yellow-500 border-b">
               <div className="stat-title text-yellow-400">Influence</div>
-              <div className="stat-value">{results.influence}</div>
+              <div className="flex justify-center">
+                <div className="stat-value">{results.influence}</div>
+              </div>
             </div>
             <div className="stat text-blue-700 border-b">
               <div className="stat-title text-blue-800">Steadiness</div>
-              <div className="stat-value">{results.steadiness}</div>
+              <div className="flex justify-center">
+                <div className="stat-value">{results.steadiness}</div>
+              </div>
             </div>
             <div className="stat text-green-700 border-b">
               <div className="stat-title text-green-800">Compliance</div>
-              <div className="stat-value">{results.compliance}</div>
+              <div className="flex justify-center">
+                <div className="stat-value">{results.compliance}</div>
+              </div>
             </div>
           </div>
         </div>
-        {topResults.length > 0 ? (
-          <ul>
-            {topResults.map(([key]) => {
-              const capitalizedKey = capitalizeFirstLetter(key);
-              const detail = personalityDetails[capitalizedKey];
-              return (
-                <li
-                  key={key}
-                  className="py-4 lg:flex border-4 border-yellow-500 p-2 mb-2 rounded-xl"
-                >
-                  <img
-                    src={detail.imageUrl}
-                    alt={key}
-                    className="w-full lg:w-1/4 mt-2"
-                  />
-                  <div>
-                    <h2 className="font-bold text-xl pl-2 lg:text-4xl py-5">
-                      {capitalizedKey}
-                    </h2>
-                    <p className="pb-2">
-                      <span className="font-bold">Deskripsi Kepribadian :</span>{" "}
-                      {detail.description}
-                    </p>
-                    <p className="pb-2">
-                      <span className="font-bold">Peran dalam Kelompok: </span>
-                      {detail.subDes1}
-                    </p>
-                    <p className="pb-2">
-                      <span className="font-bold">Kekurangan: </span>{" "}
-                      {detail.subDes2}
-                    </p>
-                    <p>
-                      <span className="font-bold">Ketakutan Terbesar: </span>
-                      {detail.subDes3}
-                    </p>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
-        ) : (
-          <p>Tidak ada data detail yang tersedia.</p>
-        )}
+        <div className="lg:px-10 pt-5 px-5 2xl:px-80 mt-28">
+          {topResults.length > 0 ? (
+            <ul>
+              {topResults.map(([key]) => {
+                const capitalizedKey = capitalizeFirstLetter(key);
+                const detail = personalityDetails[capitalizedKey];
+                return (
+                  <li
+                    key={key}
+                    className="py-4 lg:flex border-4 border-yellow-500 p-2 mb-2 rounded-xl"
+                  >
+                    <img
+                      src={detail.imageUrl}
+                      alt={key}
+                      className="w-full lg:w-1/4 mt-2"
+                    />
+                    <div>
+                      <h2 className="font-bold text-xl pl-2 lg:text-4xl py-5">
+                        {capitalizedKey}
+                      </h2>
+                      <p className="pb-2">
+                        <span className="font-bold">
+                          Deskripsi Kepribadian :
+                        </span>{" "}
+                        {detail.description}
+                      </p>
+                      <p className="pb-2">
+                        <span className="font-bold">
+                          Peran dalam Kelompok:{" "}
+                        </span>
+                        {detail.subDes1}
+                      </p>
+                      <p className="pb-2">
+                        <span className="font-bold">Kekurangan: </span>{" "}
+                        {detail.subDes2}
+                      </p>
+                      <p>
+                        <span className="font-bold">Ketakutan Terbesar: </span>
+                        {detail.subDes3}
+                      </p>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          ) : (
+            <p>Tidak ada data detail yang tersedia.</p>
+          )}
+        </div>
+        <Footer />
       </div>
-      <Footer />
       <div className="fixed bottom-10 right-10">
         <button
           onClick={handleDownload}
-          className="p-2 bg-yellow-500 font-bold rounded mt-4"
+          className="p-2 bg-yellow-500 font-bold rounded-xl mt-4 border-4 border-black"
         >
-          Download Halaman sebagai Gambar
+          Download as image
         </button>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -25,6 +25,153 @@ const questions = [
       "Suka kedamaian",
     ],
   },
+  {
+    question: "3",
+    options: [
+      "Pandai bergaul",
+      "Berkemauan kuat",
+      "Suka berkorban",
+      "Suka mengalah",
+    ],
+  },
+  {
+    question: "4",
+    options: [
+      "Suka meyakinkan",
+      "Suka bersaing",
+      "Penuh pertimbangan",
+      "Senang dibimbing",
+    ],
+  },
+  {
+    question: "5",
+    options: [
+      "Periang",
+      "Dihormati/disegani",
+      "Senang menangani problem",
+      "Cenderung menahan diri",
+    ],
+  },
+  {
+    question: "6",
+    options: ["Bersemangat", "Percaya diri", "Peka/perasa", "Cepat puas"],
+  },
+  {
+    question: "7",
+    options: [
+      "Suka memuji/menyanjung",
+      "Berpikir positif",
+      "Perencana",
+      "Sabar",
+    ],
+  },
+  {
+    question: "8",
+    options: ["Spontan", "Praktis", "Ketat pada waktu", "Pemalu"],
+  },
+  {
+    question: "9",
+    options: [
+      "Optimis",
+      "Suka bicara, terus terang",
+      "Rapi/teratur",
+      "Sopan/hormat",
+    ],
+  },
+  {
+    question: "10",
+    options: ["Suka senda gurau", "Tegar/kuat hati", "Jujur", "Ramah tamah"],
+  },
+  {
+    question: "11",
+    options: [
+      "Menyukai kenikmatan",
+      "Berani/tidak penakut",
+      "Rinci/terperinci",
+      "Diplomatis/berhati-hati",
+    ],
+  },
+  {
+    question: "12",
+    options: [
+      "Penggembira",
+      "Percaya diri",
+      "Berbudaya/terpelajar",
+      "Konsisten/tidak mudah berubah",
+    ],
+  },
+  {
+    question: "13",
+    options: [
+      "Suka memberi ilham/inspirasi",
+      "Mandiri",
+      "Idealis",
+      "Tidak suka menentang",
+    ],
+  },
+  {
+    question: "14",
+    options: [
+      "Lincah/suka membuka diri",
+      "Mampu memutuskan",
+      "Tekun/ulet",
+      "Sedikit humor",
+    ],
+  },
+  {
+    question: "15",
+    options: [
+      "Mudah berbaur/bergaul",
+      "Cepat bertindak",
+      "Gemar musik, lembut",
+      "Perantara/penengah",
+    ],
+  },
+  {
+    question: "16",
+    options: [
+      "Senang bicara",
+      "Suka ngotot kuat bertahan",
+      "Senang berfikir",
+      "Bersikap toleran",
+    ],
+  },
+  {
+    question: "17",
+    options: [
+      "Lincah bersemangat",
+      "Senang membimbing",
+      "Pendengar yang baik",
+      "Setia/tidak gampang berubah",
+    ],
+  },
+  {
+    question: "18",
+    options: [
+      "Lucu/humor",
+      "Suka memimpin",
+      "Berfikir matematis",
+      "Mudah menerima saran",
+    ],
+  },
+  {
+    question: "19",
+    options: [
+      "Terkenal luas/populer",
+      "Produktif/menghasilkan",
+      "Perfeksionis",
+      "Suka mengijinkan/memperbolehkan",
+    ],
+  },
+  {
+    question: "20",
+    options: [
+      "Bersemangat gembira",
+      "Berani/tidak gampang takut",
+      "Berkelakuan tenang/kalem",
+      "Berpendirian tetap",
+    ],
+  },
 ];
 
 const DISC = () => {
