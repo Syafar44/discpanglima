@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState } from "react";
-import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useRouter } from "next/navigation";
@@ -236,13 +235,13 @@ const DISC = () => {
     <>
       <Navbar />
       <div className="flex justify-center p-5 lg:mt-12">
-        <div className="text-wrap px-5 lg:px-52 2xl:px-96">
-          <h1 className="font-bold text-xl text-center">
+        <div className="text-wrap lg:px-52 2xl:px-96">
+          <h1 className="font-bold text-xl">
             Aplikasi DISC ini akan menampilkan kolom yang berisi empat
             pernyataan. Anda diminta untuk memilih setiap pernyataan dengan
             memberikan angka dari 4 hingga 1, dengan penjelasan sebagai berikut:
           </h1>
-          <ul className="list-disc font-semibold py-3">
+          <ul className="list-disc font-semibold py-3 px-5">
             <li>Angka 4: Sangat sesuai dengan karakter diri Anda</li>
             <li>Angka 3: Sesuai dengan karakter diri Anda</li>
             <li>Angka 2: Tidak sesuai dengan karakter diri Anda</li>
