@@ -109,8 +109,10 @@ const DetailPageContent = () => {
         <div className="lg:flex justify-between fixed -mt-2 lg:-right-10 lg:left-10 2xl:px-72 h-36 lg:h-32">
           <div className="hero-overlay blur-sm bg-white opacity-90 absolute -z-50"></div>
           <div className="pt-5 text-center lg:text-start -translate-x-16 lg:translate-x-0">
-            <h1 className="font-bold lg:text-2xl">Detail Hasil Tes DISC</h1>
-            <h1 className="font-extrabold text-xl lg:text-3xl pb-16 lg:pb-4 ">
+            <h1 className="font-bold lg:text-2xl text-black">
+              Detail Hasil Tes DISC
+            </h1>
+            <h1 className="font-extrabold text-xl lg:text-3xl pb-16 lg:pb-4 text-black">
               Panglima Roqiiqu Group
             </h1>
           </div>
