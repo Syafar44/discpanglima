@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="mt-10 bg-yellow-500">
       <div className="container p-6 mx-auto">
         <div>
-          <p className="text-center font-semibold">
+          <p className="text-center font-semibold dark:text-black">
             ©2024 Panglima Roqiiqu Group. All Rights Reserved.
           </p>
         </div>

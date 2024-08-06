@@ -106,17 +106,17 @@ const DetailPageContent = () => {
     <>
       <div ref={pageRef} className="bg-white">
         <Navbar />
-        <div className="lg:flex justify-between fixed -mt-2 lg:-right-10 lg:left-10 2xl:px-72 h-36 lg:h-32">
+        <div className="sm:flex justify-between fixed -mt-2 sm:-right-10 sm:left-10 2xl:px-72 h-36 lg:h-32">
           <div className="hero-overlay blur-sm bg-white opacity-90 absolute -z-50"></div>
-          <div className="pt-5 text-center lg:text-start -translate-x-16 lg:translate-x-0">
-            <h1 className="font-bold lg:text-2xl text-black">
+          <div className="pt-5 text-center sm:text-start -translate-x-20 sm:translate-x-0">
+            <h1 className="font-bold sm:text-xl lg:text-2xl text-black">
               Detail Hasil Tes DISC
             </h1>
             <h1 className="font-extrabold text-xl lg:text-3xl pb-16 lg:pb-4 text-black">
               Panglima Roqiiqu Group
             </h1>
           </div>
-          <div className="stats scale-[0.5] lg:scale-[0.6] -translate-x-16 -translate-y-20 lg:translate-x-0 lg:translate-y-0 2xl:scale-75 shadow lg:mb-2 bg-white">
+          <div className="stats scale-[0.5] lg:scale-[0.6] -translate-x-20 -translate-y-20 sm:translate-x-0 sm:translate-y-0 2xl:scale-75 shadow lg:mb-2 bg-white">
             <div className="stat text-red-700 border-b">
               <div className="stat-title font-semibold text-red-600">
                 Dominance
@@ -161,7 +161,7 @@ const DetailPageContent = () => {
                       alt={key}
                       className="w-full lg:w-1/4 mt-2"
                     />
-                    <div className="text-hitam">
+                    <div className="dark:text-black">
                       <h2 className="font-bold text-xl pl-2 lg:text-4xl py-5">
                         {capitalizedKey}
                       </h2>
@@ -199,7 +199,7 @@ const DetailPageContent = () => {
       <div className="fixed bottom-10 right-10">
         <button
           onClick={handleDownload}
-          className="p-2 bg-yellow-500 font-bold rounded-xl mt-4 border-4 border-black text-black"
+          className="p-2 bg-yellow-500 font-bold rounded-xl mt-4 border-4 border-black text-black dark:text-black"
         >
           Download as image
         </button>

@@ -18,7 +18,7 @@ export default function Home() {
           </p>
           <div className="flex justify-center mb-2 2xl:mb-7">
             <Link href="/Disc">
-              <button className="btn bg-yellow-500">Mulai Tes</button>
+              <button className="btn bg-yellow-500 dark:text-black">Mulai Tes</button>
             </Link>
           </div>
         </div>
