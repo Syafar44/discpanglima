@@ -116,7 +116,7 @@ const DetailPageContent = () => {
               Panglima Roqiiqu Group
             </h1>
           </div>
-          <div className="stats scale-[0.5] lg:scale-[0.6] -translate-x-16 -translate-y-20 lg:translate-x-0 lg:translate-y-0 2xl:scale-75 shadow lg:mb-2">
+          <div className="stats scale-[0.5] lg:scale-[0.6] -translate-x-16 -translate-y-20 lg:translate-x-0 lg:translate-y-0 2xl:scale-75 shadow lg:mb-2 bg-white">
             <div className="stat text-red-700 border-b">
               <div className="stat-title font-semibold text-red-600">
                 Dominance
@@ -161,7 +161,7 @@ const DetailPageContent = () => {
                       alt={key}
                       className="w-full lg:w-1/4 mt-2"
                     />
-                    <div>
+                    <div className="text-hitam">
                       <h2 className="font-bold text-xl pl-2 lg:text-4xl py-5">
                         {capitalizedKey}
                       </h2>
@@ -199,7 +199,7 @@ const DetailPageContent = () => {
       <div className="fixed bottom-10 right-10">
         <button
           onClick={handleDownload}
-          className="p-2 bg-yellow-500 font-bold rounded-xl mt-4 border-4 border-black"
+          className="p-2 bg-yellow-500 font-bold rounded-xl mt-4 border-4 border-black text-black"
         >
           Download as image
         </button>
