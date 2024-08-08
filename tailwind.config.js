@@ -1,5 +1,8 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+
+const withMT = require("@material-tailwind/react/utils/withMT");
+
+module.exports = withMT({
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,9 +11,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        customColor: '#ff5733', // Contoh warna hex
+        customColor: "#ff5733", // Contoh warna hex
       },
     },
   },
   plugins: [require("daisyui")],
-};
+});
