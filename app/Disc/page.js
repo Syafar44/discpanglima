@@ -281,25 +281,25 @@ const DISC = () => {
     <>
       <Navbar />
       <main className="container mx-auto px-5">
-        <div className="py-5 px-5 md:py-20 md:px-10">
-          <h1 className="font-bold text-xl">
+        <div className="py-5 md:py-20 md:px-10">
+          <h1 className="font-bold break-all text-sm md:text-xl">
             Aplikasi DISC ini akan menampilkan kolom yang berisi empat
             pernyataan. Anda diminta untuk memilih setiap pernyataan dengan
             memberikan angka dari 4 hingga 1, dengan penjelasan sebagai berikut:
           </h1>
-          <ul className="list-disc font-semibold py-3 px-5">
+          <ul className="list-disc text-xs md:text-base font-semibold py-3 px-5">
             <li>Angka 4: Sangat sesuai dengan karakter diri Anda</li>
             <li>Angka 3: Sesuai dengan karakter diri Anda</li>
             <li>Angka 2: Tidak sesuai dengan karakter diri Anda</li>
             <li>Angka 1: Sangat tidak sesuai dengan karakter diri Anda</li>
           </ul>
-          <p>
+          <p className="text-sm md:text-base">
             Setiap pernyataan pada masing-masing kolom harus diisi dengan salah
             satu dari pilihan angka di atas.
           </p>
         </div>
         <form onSubmit={handleSubmit} className="">
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
             {questions.map((q, index) => (
               <div
                 key={index}
