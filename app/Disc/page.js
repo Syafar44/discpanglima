@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useRouter } from "next/navigation";
@@ -277,6 +277,17 @@ const DISC = () => {
     }
   };
 
+  useEffect(() => {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+  
+      const style = document.createElement("style");
+      style.innerHTML = `@media (prefers-color-scheme: dark) { 
+        body { background-color: white !important; color: black !important; } 
+      }`;
+      document.head.appendChild(style);
+    }, []);
+
   return (
     <>
       <Navbar />
@@ -329,7 +340,7 @@ const DISC = () => {
                               e.target.value
                             )
                           }
-                          className="select select-bordered"
+                          className="select select-bordered bg-white"
                         >
                           {[0, 4, 3, 2, 1].map((num) => (
                             <option

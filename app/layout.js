@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
           href="https://raw.githubusercontent.com/Syafar44/assets/main/assets/image/Desain%20Kitalulus%20PRG%20(2).jpg"
         />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} bg-white`}>{children}</body>
     </html>
   );
 }

@@ -150,7 +150,6 @@ const DetailPageContent = () => {
           padding: { top: 5, right: 40 },
         },
         fill: { opacity: 0.9 },
-        tooltip: { theme: "dark" },
       },
     }),
     [results]
@@ -209,7 +208,7 @@ const DetailPageContent = () => {
       <div className="fixed bottom-10 right-10">
         <button
           onClick={handleDownload}
-          className="p-2 bg-yellow-700 font-bold rounded-xl mt-4 border-4 border-black text-black dark:text-black"
+          className="p-2 bg-yellow-700 font-bold rounded-xl mt-4 border-4 border-black text-black"
         >
           Download as image
         </button>
